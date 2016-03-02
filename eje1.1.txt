@@ -1,0 +1,5 @@
+# -*- coding: utf-8 -*-
+import sys
+from lxml import etree
+arbol=etree.parse("provinciasypoblaciones.xml")
+
