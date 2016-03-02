@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+import sys
+from lxml import etree
+arbol=etree.parse("/home/alvarocamargo/Descargas/asociaciones.xml")
+asociaciones=arbol.xpath('/asociaciones/asociacion/nombre')
+for x in asociaciones:
+	print x.text
+
