@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*
+#4)Programa que pida por teclado el numero de teléfono y muestre a que asociacion pertenece
+from lxml import etree
+from pprint import pprint
+arbol=etree.parse("/home/alvarocamargo/Descargas/asociaciones.xml")
+numero=arbol.findall("asociacion")
+telef=raw_input("Introduce un numero de telefono:")
+for w in numero:
+	numero= w.find("telefono")
+	if numero.text==telef:
+		nombre=w.findall("nombre")
+		for t in nombre:
+			print t.text
+		break
