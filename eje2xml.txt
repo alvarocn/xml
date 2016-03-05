@@ -1,0 +1,13 @@
+#Programa que liste los codigos postales y el numero de asociaciones en cada localidad.
+from lxml import etree
+from pprint import pprint
+arbol=etree.parse("/home/alvarocamargo/Descargas/asociaciones.xml")
+
+cp=arbol.findall("asociacion")
+cp1=raw_input("Introduce un Codigo postal:")
+for w in cp:
+	codigo=w.find("codigopostal")
+	nombre=w.findall("nombre")
+	for q in nombre:
+		if q.text==cp1:
+			print q.text
