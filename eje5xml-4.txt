@@ -1,0 +1,22 @@
+#5)Programa que pida por teclado el codigo postal y muestre las asociaciones y las actividades que realiza.
+
+from lxml import etree
+from pprint import pprint
+arbol=etree.parse("/home/alvarocamargo/Descargas/asociaciones.xml")
+cp=arbol.findall("asociacion")
+cp1=raw_input("Introduce un Codigo postal:")
+f=[]
+for w in cp:
+	cp= w.find("codigopostal")
+	if cp.text==cp1:
+		nombre=w.findall("nombre")
+		for t in nombre:
+			if cp.text==cp1:
+				actividad=w.findall("actividades/actividad")
+				for h in actividad:
+					
+
+
+			
+					print t.text, "Realiza:", h.text
+		
